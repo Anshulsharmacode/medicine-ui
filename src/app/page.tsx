@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 interface Message {
   type: 'user' | 'bot';
@@ -64,11 +65,13 @@ const MedicineCard = ({ medicine }: MedicineCardProps) => {
       {isExpanded && (
         <div className="p-4 border-t border-gray-600">
           {medicine.image_url && (
-            <img 
+            <Image 
               src={medicine.image_url} 
               alt={medicine.medicine_name}
               className="w-full h-48 object-contain rounded-md"
               loading="lazy"
+              width={1920} // Specify width for optimization
+              height={1080} // Specify height for optimization
             />
           )}
           <div className="mt-2">
@@ -135,7 +138,7 @@ export default function Home() {
       setMessages(prev => [...prev, {
         type: 'bot',
         content: data.gemini_answer.replace(/\*/g, '').trim(),
-        medicines: data.data.map((med: any) => ({
+        medicines: data.data.map((med: { [key: string]: string }) => ({
           medicine_name: med.medicine_name,
           composition: med.composition,
           uses: med.uses,
