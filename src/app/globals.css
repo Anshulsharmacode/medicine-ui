@@ -5,6 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-merriweather: 'Merriweather', serif; /* Added Merriweather font */
+  --font-lora: 'Lora', serif; /* Added Lora font */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,5 +19,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-merriweather), var(--font-lora), Arial, Helvetica, sans-serif; /* Updated font-family */
 }
