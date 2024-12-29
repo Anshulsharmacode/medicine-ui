@@ -264,7 +264,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-950 font-inter">
+    <div className="flex flex-col md:min-h-screen min-h-[93vh] bg-slate-950 font-inter">
       {/* Header */}
       <header className="bg-slate-900 border-b border-slate-800 py-8">
         <div className="max-w-5xl mx-auto px-6">
@@ -272,7 +272,7 @@ export default function Home() {
             Medicine AI Assistant
           </h1>
           <p className="text-slate-400 mt-2 text-base">
-            Get expert information about medications and treatments
+            Get Info about medications and treatments
           </p>
         </div>
       </header>
@@ -328,10 +328,7 @@ export default function Home() {
       {/* Input Form */}
       <div className="bg-slate-900 border-t border-slate-800 p-6">
         <div className="max-w-5xl mx-auto">
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-3"
-          >
+          <form onSubmit={handleSubmit} className="flex flex-row gap-3 py-2">
             <input
               type="text"
               value={input}
