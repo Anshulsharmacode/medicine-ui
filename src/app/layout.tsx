@@ -5,7 +5,7 @@ import "./globals.css";
 const merriweather = Merriweather({
   variable: "--font-merriweather",
   subsets: ["latin"],
-  weight: "300"
+  weight: "300",
 });
 
 const lora = Lora({
@@ -25,9 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${merriweather.variable} ${lora.variable} antialiased`}
-      >
+      <body className={`${merriweather.variable} ${lora.variable} antialiased`}>
         {children}
       </body>
     </html>
